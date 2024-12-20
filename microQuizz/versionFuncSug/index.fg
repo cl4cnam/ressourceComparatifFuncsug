@@ -1,0 +1,16 @@
+# 1) Afficher la question
+#------------------------
+displayMessageIn('Que met-on sur les mains ?', '#question')
+
+# 2) Gérer la réponse
+#--------------------
+parallel exitAfter 1 finished ||
+	awaitClickBeep('#button1')
+	displayMessageIn('Ah, oui, pour faire des marionnettes !', '#reponse')
+||
+	awaitClickBeep('#button2')
+	displayMessageIn('Oui, quand il fait froid.', '#reponse')
+
+# 3) Annoncer la fin
+#-------------------
+displayMessageIn('-- FIN --', '#fin')
